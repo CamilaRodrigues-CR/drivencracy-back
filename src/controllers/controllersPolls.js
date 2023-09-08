@@ -7,8 +7,8 @@ export async function postPoll(req, res) {
 
 
     try {
-        if (expireAt === "") {
-            const date = moment().add(1, 'months').format("DD-MM-YYYY HH:mm")
+        if (!expireAt) {
+            const date = moment().add(1, 'months').format('YYYY-MM-DD HH:mm')
             await db.collection('enquets').insertOne({ title, expireAt: date })
 
             const enquet = await db.collection('enquets').findOne({title})

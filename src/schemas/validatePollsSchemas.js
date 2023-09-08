@@ -4,7 +4,7 @@ import Joi from "joi";
 
 export const postPollSchema = Joi.object({
     title: Joi.string().required(),
-    expireAt: Joi.optional(new RegExp('[0-9]{2}[-][0-9]{2}[-][0-9]{4}[ ][0-9]{2}[:][0-9]{2}'))
+    expireAt: Joi.optional()
 });
 
 
